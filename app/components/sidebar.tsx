@@ -5,9 +5,7 @@ import { SidebarButton } from './SidebarButton';
 import { sidebarMenu } from '@/constants/sidebarMenu';
 import { usePathname } from 'next/navigation';
 
-export const Sidebar = () => {
-
-    const [selectedIdx, setSelectedIdx] = useState<number>()
+export const Sidebar : React.FC = () => {
 
     const pathname = usePathname();
 
