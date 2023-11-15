@@ -5,7 +5,7 @@ import { SidebarButton } from './SidebarButton';
 import { sidebarMenu } from '@/constants/sidebarMenu';
 import { usePathname } from 'next/navigation';
 
-export const Sidebar : React.FC = () => {
+export default function SideBar () {
 
     const pathname = usePathname();
 
