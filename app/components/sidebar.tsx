@@ -1,10 +1,16 @@
-// components/Sidebar.js
-import React from 'react';
-import { FaRegStickyNote, FaTrash } from "react-icons/fa";
+"use client"
+import React, { useState } from 'react';
 import { CgNotes } from "react-icons/cg"
-import { BsGear } from "react-icons/bs"
+import { SidebarButton } from './SidebarButton';
+import { sidebarMenu } from '@/constants/sidebarMenu';
+import { usePathname } from 'next/navigation';
 
 export const Sidebar = () => {
+
+    const [selectedIdx, setSelectedIdx] = useState<number>()
+
+    const pathname = usePathname();
+
     return (
         <div className="w-44 min-h-screen bg-gray-800 p-3">
             {/* Konten sidebar */}
@@ -13,18 +19,16 @@ export const Sidebar = () => {
                 <p className="text-xl py-3 ml-2">My Task</p>
             </div>
             <ul>
-                <button className='flex items-center focus:bg-cyan-300 focus:rounded-lg px-3 focus:text-black'>
-                    <FaRegStickyNote />
-                    <li className="py-2 ml-2">All Notes</li>
-                </button>
-                <button className='flex items-center focus:bg-cyan-300 focus:rounded-lg px-3 focus:text-black'>
-                    <FaTrash />
-                    <li className="py-2 ml-2">Trash</li>
-                </button>
-                <button className='flex items-center focus:bg-cyan-300 focus:rounded-lg px-3 focus:text-black'>
-                    <BsGear />
-                    <li className="py-2 ml-2">Settings</li>
-                </button>
+                {sidebarMenu.map((item, idx) => (
+                    <SidebarButton
+                        icon={item.icon}
+                        title={item.title}
+                        key={idx}
+                        onPress={() => console.log()}
+                        active={pathname === item.path}
+                        path={item.path}
+                    />
+                ))}
             </ul>
         </div>
     );

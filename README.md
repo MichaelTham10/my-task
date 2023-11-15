@@ -15,7 +15,7 @@ pnpm dev
 
 Second, run the electron server:
 ```bash
-npm run electron .
+npm run electron-dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
