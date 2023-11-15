@@ -9,10 +9,10 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "next-build": "next build && next export",
+    "build": "next build",
     "electron-dev": "cross-env NODE_ENV=development electron .",
     "electron-build": "cross-env NODE_ENV=production electron .",
-    "build": "next build && electron-builder"
+    "electron-builder": "next build && electron-builder"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
