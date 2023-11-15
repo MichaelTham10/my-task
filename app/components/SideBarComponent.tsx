@@ -5,7 +5,7 @@ import { SidebarButton } from './SidebarButton';
 import { sidebarMenu } from '@/constants/sidebarMenu';
 import { usePathname } from 'next/navigation';
 
-export default function SideBar () {
+export default function SideBarComponent () {
 
     const pathname = usePathname();
 
